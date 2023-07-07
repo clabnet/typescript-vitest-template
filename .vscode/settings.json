@@ -1,8 +1,28 @@
-// Place your settings in this file to overwrite default and user settings.
 {
-  "files.exclude": {
-    "**/*.js": {
-      "when": "$(basename).ts"
-    }
-  }
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#69aa00",
+    "activityBar.foreground": "#ffffff",
+    "activityBar.inactiveForeground": "#00ff73"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.ignoreLimitWarning": true,
+  "emmet.includeLanguages": {
+    "ejs.t": "html"
+  },
+  "debug.terminal.clearBeforeReusing": true,
+  "vue.codeActions.enabled": false,
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "editor.bracketPairColorization.enabled": true
 }

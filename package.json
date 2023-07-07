@@ -7,16 +7,19 @@
   "license": "MIT",
   "packageManager": "pnpm@7.30.5",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm dev",
+    "dev": "tsup --watch --onSuccess \"run-p dev:start check:types\"",
+    "dev:start": "node -r @cspotcode/source-map-support/register -r dotenv/config build/index.js",
     "prebuild": "pnpm lint && rimraf ./build",
     "build": "tsc -p ./tsconfig.json",
     "start": "node --enable-source-maps build/index.js",
     "update": "npx npm-check -u",
+    "clean": "rimraf build",
+    "format": "prettier --config .prettierrc \"src/**/*.{js,json,ts,css,scss,vue,html,md}\" --write",
     "lint": "eslint --ext .ts --no-error-on-unmatched-pattern \"src/**/*.ts\" \"test/**/*.ts\"",
-    "dev": "tsup --watch --onSuccess \"run-p dev:start check:types\"",
-    "dev:start": "node -r @cspotcode/source-map-support/register -r dotenv/config build/index.js",
     "check:types": "tsc -p ./tsconfig.json --noEmit",
     "test": "vitest",
-    "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage"
   },
   "repository": {

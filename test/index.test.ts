@@ -1,6 +1,6 @@
 import { it, describe, expect } from 'vitest';
 
-import { sumMultiply } from '../src/app';
+import { sumMultiply } from '../src/index';
 
 describe('sum', () => {
   it('sum return a number', async () => {
