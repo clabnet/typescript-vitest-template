@@ -1,0 +1,56 @@
+{
+  "name": "typescript-vitest-template",
+  "version": "0.0.1",
+  "description": "Typescript Vitest template microservice starter",
+  "main": "build",
+  "author": "Claudio Barca <c.barca@libero.it>",
+  "license": "MIT",
+  "packageManager": "pnpm@7.30.5",
+  "scripts": {
+    "prebuild": "pnpm lint && rimraf ./build",
+    "build": "tsc -p ./tsconfig.json",
+    "start": "node --enable-source-maps build/index.js",
+    "update": "npx npm-check -u",
+    "lint": "eslint --ext .ts --no-error-on-unmatched-pattern \"src/**/*.ts\" \"test/**/*.ts\"",
+    "dev": "tsup --watch --onSuccess \"run-p dev:start check:types\"",
+    "dev:start": "node -r @cspotcode/source-map-support/register -r dotenv/config build/index.js",
+    "check:types": "tsc -p ./tsconfig.json --noEmit",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clabnet/typescript-vitest-template.git"
+  },
+  "dependencies": {
+    "tslib": "^2.5.0"
+  },
+  "devDependencies": {
+    "@cspotcode/source-map-support": "^0.8.1",
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vitest/coverage-c8": "^0.29.8",
+    "@vitest/ui": "^0.29.8",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "esbuild": "^0.17.15",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.7",
+    "rimraf": "^4.4.1",
+    "ts-node": "^10.9.1",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.3",
+    "vite": "^4.2.1",
+    "vitest": "^0.29.8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pnpm run test && pnpm build"
+    }
+  }
+}

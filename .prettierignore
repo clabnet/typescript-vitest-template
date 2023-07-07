@@ -1,0 +1,13 @@
+/dist/*
+.local
+.output.js
+/node_modules/**
+/src/assets/**
+
+**/*.svg
+**/*.sh
+**/*.md
+/public/*
+
+# Ignore all yml files:
+*.yml

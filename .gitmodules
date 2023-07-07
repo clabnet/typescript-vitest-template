@@ -1,0 +1,12 @@
+[submodule "drawings"]
+	path = drawings
+	url = git@ssh.dev.azure.com:v3/teogroup-1/pomini-environment/drawings-fe
+[submodule "erm"]
+	path = erm
+	url = git@ssh.dev.azure.com:v3/teogroup-1/pomini-environment/erm-fe
+[submodule "hello"]
+	path = hello
+	url = git@ssh.dev.azure.com:v3/teogroup-1/pomini-environment/hello-fe
+[submodule "horizon"]
+	path = horizon
+	url = git@ssh.dev.azure.com:v3/teogroup-1/pomini-environment/horizon-fe
