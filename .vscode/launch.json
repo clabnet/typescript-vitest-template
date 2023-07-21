@@ -8,9 +8,7 @@
       "restart": true,
       "address": "localhost",
       "sourceMaps": true,
-      "skipFiles": [
-        "node_modules"
-      ],
+      "skipFiles": ["node_modules"],
       "port": 9229
     },
     {
@@ -20,9 +18,7 @@
       "restart": true,
       "address": "localhost",
       "sourceMaps": true,
-      "skipFiles": [
-        "node_modules"
-      ],
+      "skipFiles": ["node_modules"],
       "port": 9229,
       "localRoot": "${workspaceRoot}",
       "remoteRoot": "/home/app/node"

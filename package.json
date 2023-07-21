@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Typescript Vitest template microservice starter",
   "main": "build",
-  "author": "Claudio Barca <c.barca@libero.it>",
+  "author": "Claudio Barca",
   "license": "MIT",
   "packageManager": "pnpm@7.30.5",
   "scripts": {
@@ -16,10 +16,11 @@
     "start": "node --enable-source-maps build/index.js",
     "update": "npx npm-check -u",
     "clean": "rimraf build",
-    "format": "prettier --config .prettierrc \"src/**/*.{js,json,ts,css,scss,vue,html,md}\" --write",
+    "format": "prettier --config .prettierrc \"{src,test}/**/*.{js,json,ts,css,scss,vue,html,md,test.ts}\" --write",
     "lint": "eslint --ext .ts --no-error-on-unmatched-pattern \"src/**/*.ts\" \"test/**/*.ts\"",
     "check:types": "tsc -p ./tsconfig.json --noEmit",
     "test": "vitest",
+    "test:ui": "vitest --ui --api 9527",
     "test:coverage": "vitest --coverage"
   },
   "repository": {
@@ -42,6 +43,7 @@
     "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.15.1",
     "husky": "^8.0.3",
     "prettier": "^2.8.7",
     "rimraf": "^4.4.1",

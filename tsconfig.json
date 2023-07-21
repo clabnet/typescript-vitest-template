@@ -21,15 +21,8 @@
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
     "skipLibCheck": true,
-    "lib": [
-      "esnext"
-    ],
-    "typeRoots": [
-      "./node_modules/@types",
-      "./typings"
-    ]
+    "lib": ["esnext"],
+    "typeRoots": ["./node_modules/@types", "./typings"]
   },
-  "include": [
-    "./src/**/*.ts"
-  ]
+  "include": ["./src/**/*.ts"]
 }
