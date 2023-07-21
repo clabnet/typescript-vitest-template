@@ -28,7 +28,10 @@
     "url": "https://github.com/clabnet/typescript-vitest-template.git"
   },
   "dependencies": {
-    "tslib": "^2.5.0"
+    "axios": "^1.4.0",
+    "keycloak-js": "^22.0.1",
+    "tslib": "^2.5.0",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@cspotcode/source-map-support": "^0.8.1",

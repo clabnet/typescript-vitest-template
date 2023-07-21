@@ -1,27 +1,32 @@
+// Use IntelliSense to learn about possible attributes.
+// Hover to view descriptions of existing attributes.
+// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
 {
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Attach",
-      "type": "node",
-      "request": "attach",
-      "restart": true,
-      "address": "localhost",
-      "sourceMaps": true,
-      "skipFiles": ["node_modules"],
-      "port": 9229
+      "name": "Launch via PNPM",
+      "request": "launch",
+      "runtimeArgs": ["run-script", "debug"],
+      "runtimeExecutable": "pnpm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
     },
+
     {
-      "name": "Attach to Docker",
       "type": "node",
-      "request": "attach",
-      "restart": true,
-      "address": "localhost",
-      "sourceMaps": true,
-      "skipFiles": ["node_modules"],
-      "port": 9229,
-      "localRoot": "${workspaceRoot}",
-      "remoteRoot": "/home/app/node"
+      "request": "launch",
+      "name": "Debug Current Vitest File",
+      "autoAttachChildProcesses": true,
+      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+      "program": "${workspaceRoot}/node_modules/vitest/vitest.mjs",
+      "args": ["run", "${relativeFile}"],
+      "smartStep": true,
+      "console": "integratedTerminal"
     }
-  ]
+  ],
+  "debug.javascript.autoAttachFilter": "onlyWithFlag",
+  "debug.javascript.terminalOptions": {
+    "skipFiles": ["${workspaceFolder}/node_modules/**/*.js", "<node_internals>/**/*.js"]
+  }
 }
